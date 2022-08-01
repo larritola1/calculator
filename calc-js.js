@@ -41,6 +41,9 @@ let userInput = "";
             // Extract text associated with button
             const digit = button.textContent;
             // Place digit in display variable if number
+            if (digit >= 0) {
+                userInput += digit;
+            }
             // Add display variable to calc display
         });
     });

@@ -33,6 +33,8 @@ function operate(operand1, operand2, operator) {
 let userInput;
 
 // Populate display with clicked digits
+    // Collect number pad buttons
+    const numberPad = document.querySelectorAll("#numberPad .numberRow button");
     // Detect mouse click
     // Run function
         // Collect button info

@@ -45,6 +45,8 @@ let userInput = "";
                 userInput += digit;
             }
             // Add display variable to calc display
+            const display = document.querySelector("#screen");
+            display.textContent = userInput;
         });
     });
 

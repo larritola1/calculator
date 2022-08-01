@@ -35,10 +35,14 @@ let userInput;
 // Populate display with clicked digits
     // Collect number pad buttons
     const numberPad = document.querySelectorAll("#numberPad .numberRow button");
-    // Detect mouse click
-    // Run function
-        // Collect button info
-        // Extract digit associated with button
-        // Place digit in display variable
-        // Add display variable to calc display
+    // Detect mouse click per button
+    numberPad.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Run function
+            // Collect button info
+            // Extract digit associated with button
+            // Place digit in display variable
+            // Add display variable to calc display
+        });
+    });
 

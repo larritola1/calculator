@@ -20,3 +20,33 @@ body {
     background-color: grey;
 }
 
+#calcDisplay, #keypad {
+    flex: auto;
+}
+
+#calcDisplay {
+    display: flex;
+}
+
+#keypad {
+    display: flex;
+}
+
+#numberPad {
+    display: flex;
+    flex-direction: column;
+}
+
+#operators {
+    display: flex;
+    flex-direction: column;
+}
+
+.numberRow {
+    flex: 1;
+    display: flex;
+}
+
+.numberRow button {
+    flex: 1;
+}

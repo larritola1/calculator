@@ -39,7 +39,7 @@ body {
     width: 100%;
     height: auto;
     border: 2px solid black;
-    flex: 1;
+    flex: 5;
 }
 
 #screen {
@@ -49,12 +49,24 @@ body {
     word-break: break-all;
 }
 
+#clear {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 2px solid green;
+}
+
+#clearButton {
+    width: 100%;
+}
+
 #calcInput {
     display: flex;
     width: 100%;
     max-width: 100%;
     justify-content: center;
-    flex: 1;
+    flex: 5;
 }
 
 #keypad {

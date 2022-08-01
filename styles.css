@@ -16,6 +16,7 @@ body {
     width: 50%;
     height: 30%;
     background-color: grey;
+    padding: 1rem;
 }
 
 #calcUI {
@@ -27,6 +28,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 2px solid orange;
+    gap: 1rem;
 
 }
 

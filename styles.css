@@ -16,20 +16,30 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: fit-content;
+    width: 50%;
+    height: 30%;
     background-color: grey;
-}
-
-#calcDisplay, #keypad {
-    flex: auto;
 }
 
 #calcDisplay {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+}
+
+#screen {
+    display: flex;
+    max-width: 100%;
+    word-break: break-all;
+    border: 2px solid green;
 }
 
 #keypad {
     display: flex;
+    width: 100%;
 }
 
 #numberPad {

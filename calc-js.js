@@ -33,20 +33,20 @@ function operate(operand1, operand2, operator) {
 let userInput = "";
 
 // Populate display with clicked digits
-    // Collect number pad buttons
-    const numberPad = document.querySelectorAll("#numberPad .numberRow button");
-    // Detect mouse click per button
-    numberPad.forEach((button) => {
-        button.addEventListener("click", () => {
-            // Extract text associated with button
-            const digit = button.textContent;
-            // Place digit in display variable if number
-            if (digit >= 0) {
-                userInput += digit;
-            }
-            // Add display variable to calc display
-            const display = document.querySelector("#screen");
-            display.textContent = userInput;
-        });
+// Collect number pad buttons
+const numberPad = document.querySelectorAll("#numberPad .numberRow button");
+// Detect mouse click per button
+numberPad.forEach((button) => {
+    button.addEventListener("click", () => {
+        // Extract text associated with button
+        const digit = button.textContent;
+        // Place digit in display variable if number
+        if (digit >= 0) {
+            userInput += digit;
+        }
+        // Add display variable to calc display
+        const display = document.querySelector("#screen");
+        display.textContent = userInput;
     });
+});
 

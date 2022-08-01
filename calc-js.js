@@ -30,6 +30,7 @@ function operate(operand1, operand2, operator) {
 }
 
 // Create display variable to collect user input
+let userInput;
 
 // Populate display with clicked digits
     // Detect mouse click

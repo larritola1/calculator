@@ -28,3 +28,14 @@ function operate(operand1, operand2, operator) {
             return divide(operand1, operand2);
     }
 }
+
+// Create display variable to collect user input
+
+// Populate display with clicked digits
+    // Detect mouse click
+    // Run function
+        // Collect button info
+        // Extract digit associated with button
+        // Place digit in display variable
+        // Add display variable to calc display
+

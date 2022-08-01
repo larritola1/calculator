@@ -12,13 +12,18 @@ body {
 }
 
 #calcContainer {
+    width: 50%;
+    height: 30%;
+    background-color: grey;
+}
+
+#calcUI {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    height: 30%;
-    background-color: grey;
 }
 
 #calcDisplay {
@@ -34,12 +39,11 @@ body {
     display: flex;
     max-width: 100%;
     word-break: break-all;
-    border: 2px solid green;
 }
 
 #keypad {
     display: flex;
-    width: 100%;
+    border: 2px solid red;
 }
 
 #numberPad {

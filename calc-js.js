@@ -48,6 +48,11 @@ inputs.forEach((button) => {
         if (digit >= 0) {
             userInput += digit;
         }
+        // Handle operator selections
+        if ((digit == "+" || digit == "-" || digit == "*" 
+            || digit == "/" || digit == "=")) {
+
+        }
         // Add display variable to calc display
         const display = document.querySelector("#screen");
         display.textContent = userInput;

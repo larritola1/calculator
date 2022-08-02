@@ -51,7 +51,11 @@ inputs.forEach((button) => {
         // Handle operator selections
         if ((digit == "+" || digit == "-" || digit == "*" 
             || digit == "/" || digit == "=")) {
-
+             // Run operate() if operation is set up
+             if (number1 && operation) {
+                number2 = parseInt(userInput);
+                solution = operate(number1, number2, operation);
+            }
         }
         // Add display variable to calc display
         const display = document.querySelector("#screen");

@@ -90,6 +90,8 @@ inputs.forEach((button) => {
          } else if (solution && !operation) { // Selecting new number after completed operation
             display.textContent = solution = number1 = "";
             display.textContent = digit;
+        }  else { // Setting up operation
+            display.textContent += digit;
         }
     });
 });

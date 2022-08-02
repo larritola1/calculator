@@ -61,10 +61,18 @@ inputs.forEach((button) => {
                 }
                 // Setup for next inputted number
                 userInput = "";
+            }    
+            // Run saveNumber() if number exists
+            if (userInput) {
+                saveNumber(userInput, digit);
+            } else {
+                digit = "";
             }
         }
-        // Add display variable to calc display
+
+        // Collect "screen" div
         const display = document.querySelector("#screen");
+        
         display.textContent = userInput;
     });
 });

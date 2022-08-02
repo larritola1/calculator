@@ -72,8 +72,9 @@ inputs.forEach((button) => {
 
         // Collect "screen" div
         const display = document.querySelector("#screen");
-        
-        display.textContent = userInput;
+
+         // Setup display configuration
+         if (number1 && number2 && operation) {} // Operation completely setup and evaluated
     });
 });
 

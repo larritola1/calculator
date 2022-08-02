@@ -29,8 +29,12 @@ function operate(operand1, operand2, operator) {
     }
 }
 
-// Create display variable to collect user input
+// Create variables to collect user input
 let userInput = "";
+let number1 = "";
+let number2 = "";
+let operation = "";
+let solution = "";
 
 // Populate display with clicked digits
 // Collect number pad buttons

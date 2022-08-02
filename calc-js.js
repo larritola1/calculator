@@ -55,6 +55,10 @@ inputs.forEach((button) => {
              if (number1 && operation) {
                 number2 = parseInt(userInput);
                 solution = operate(number1, number2, operation);
+                // Switch operator if another operation is being setup
+                if (operation !== "=") {    
+                    operation = digit;
+                }
             }
         }
         // Add display variable to calc display

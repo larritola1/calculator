@@ -59,6 +59,8 @@ inputs.forEach((button) => {
                 if (operation !== "=") {    
                     operation = digit;
                 }
+                // Setup for next inputted number
+                userInput = "";
             }
         }
         // Add display variable to calc display

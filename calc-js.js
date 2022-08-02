@@ -82,7 +82,11 @@ inputs.forEach((button) => {
             if (operation === "=") { // Display answer only, no follow up operation
                 operation = "";
                 userInput = solution;
-                display.textContent = solution;}
+                display.textContent = solution;
+            } else { // Display next operation using current answer
+                number1 = solution;
+                display.textContent = solution + operation;
+            }
          }
     });
 });

@@ -78,6 +78,11 @@ inputs.forEach((button) => {
             // Blank out numbers for future operations
             number1 = ""; 
             number2 = "";
+
+            if (operation === "=") { // Display answer only, no follow up operation
+                operation = "";
+                userInput = solution;
+                display.textContent = solution;}
          }
     });
 });

@@ -43,8 +43,8 @@ const inputs = document.querySelectorAll("#numberPad .numberRow button, #operato
 inputs.forEach((button) => {
     button.addEventListener("click", () => {
         // Extract text associated with button
-        const digit = button.textContent;
-        // Place digit in display variable if number
+        let digit = button.textContent;
+        // Place digit in userInput if number
         if (digit >= 0) {
             userInput += digit;
         }

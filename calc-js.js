@@ -37,10 +37,10 @@ let operation = "";
 let solution = "";
 
 // Populate display with clicked digits
-// Collect number pad buttons
-const numberPad = document.querySelectorAll("#numberPad .numberRow button");
+// Collect all input buttons
+const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button");
 // Detect mouse click per button
-numberPad.forEach((button) => {
+inputs.forEach((button) => {
     button.addEventListener("click", () => {
         // Extract text associated with button
         const digit = button.textContent;

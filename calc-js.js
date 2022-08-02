@@ -63,7 +63,7 @@ inputs.forEach((button) => {
                 userInput = "";
             }    
             // Run saveNumber() if number exists
-            if (userInput) {
+            if (userInput && digit !== "=") {
                 saveNumber(userInput, digit);
             } else {
                 digit = "";
@@ -96,3 +96,9 @@ inputs.forEach((button) => {
     });
 });
 
+// Save first number and operator
+function saveNumber (number, operator) {
+    number1 = parseInt(number);
+    operation = operator;
+    userInput = "";
+}

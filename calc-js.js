@@ -87,7 +87,10 @@ inputs.forEach((button) => {
                 number1 = solution;
                 display.textContent = solution + operation;
             }
-         }
+         } else if (solution && !operation) { // Selecting new number after completed operation
+            display.textContent = solution = number1 = "";
+            display.textContent = digit;
+        }
     });
 });
 

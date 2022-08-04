@@ -42,12 +42,19 @@ let solution = "";
 
 // Populate display with clicked digits
 // Collect all input buttons
-const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button");
+const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button, #clearButton");
 // Detect mouse click per button
 inputs.forEach((button) => {
     button.addEventListener("click", () => {
         // Extract text associated with button
         let digit = button.textContent;
+        // Collect "screen" div
+        const display = document.querySelector("#screen");
+        // Clear screen and all variables if "clear" is clicked
+        if (digit === "Clear") {
+            display.textContent = digit = userInput = number1 = number2 
+            = operation = solution = "";
+        }
         // Place digit in userInput if number
         if (digit >= 0 || digit < 0) {
             userInput += digit;
@@ -77,10 +84,6 @@ inputs.forEach((button) => {
                 digit = "";
             }
         }
-
-        // Collect "screen" div
-        const display = document.querySelector("#screen");
-
          // Setup display configuration
          if (Number.isFinite(number1) && Number.isFinite(number2) && operation) { // Operation completely setup and evaluated
             // Blank out numbers for future operations

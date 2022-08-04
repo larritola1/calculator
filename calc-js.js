@@ -53,7 +53,7 @@ inputs.forEach((button) => {
             || digit == "/" || digit == "=")) {
              // Run operate() if operation is set up
              if (!Number.isNaN(number1) && operation && (!Number.isNaN(userInput) && userInput !== "")) {
-                number2 = parseInt(userInput);
+                number2 = parseFloat(userInput);
                 solution = operate(number1, number2, operation);
                 // Switch operator to currently selected
                 operation = digit;
@@ -61,7 +61,7 @@ inputs.forEach((button) => {
                 userInput = "";
             }    
             // Run saveNumber() if number exists
-            if ((userInput && digit !== "=") || (Number.isInteger(solution) && digit !== "=" && Number.isNaN(parseInt(number1)))) {
+            if ((userInput && digit !== "=") || (Number.isFinite(solution) && digit !== "=" && Number.isNaN(parseInt(number1)))) {
                 if (userInput) {
                     saveNumber(userInput, digit);
                 } else {
@@ -76,7 +76,7 @@ inputs.forEach((button) => {
         const display = document.querySelector("#screen");
 
          // Setup display configuration
-         if (Number.isInteger(number1) && Number.isInteger(number2) && operation) { // Operation completely setup and evaluated
+         if (Number.isFinite(number1) && Number.isFinite(number2) && operation) { // Operation completely setup and evaluated
             // Blank out numbers for future operations
             number1 = ""; 
             number2 = "";
@@ -99,7 +99,7 @@ inputs.forEach((button) => {
 
 // Save first number and operator
 function saveNumber (number, operator) {
-    number1 = parseInt(number);
+    number1 = parseFloat(number);
     operation = operator;
     userInput = "";
 

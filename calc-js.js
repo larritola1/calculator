@@ -81,8 +81,8 @@ inputs.forEach((button) => {
                 operation = "";
                 display.textContent = solution;
             } else { // Display next operation using current answer
-                number1 = solution;
-                display.textContent = solution + operation;
+                saveNumber(solution, operation)
+                display.textContent = number1 + operation;
             }
         } else if (solution && userInput) {
             display.textContent = solution = "";
@@ -98,4 +98,8 @@ function saveNumber (number, operator) {
     number1 = parseInt(number);
     operation = operator;
     userInput = "";
+
+    if (solution) {
+        solution = "";
+    }
 }

@@ -78,7 +78,7 @@ inputs.forEach((button) => {
                 if (userInput) {
                     saveNumber(userInput, digit);
                 } else {
-                    saveNumber(solution, digit);
+                    saveNumber(solution + userInput, digit);
                 }
             } else {
                 digit = "";
@@ -97,7 +97,7 @@ inputs.forEach((button) => {
                 saveNumber(solution, operation)
                 display.textContent = number1 + operation;
             }
-        } else if (solution && userInput) { // Selecting new number after completed operation
+        } else if (Number.isFinite(solution) && !(Number.isNaN(parseFloat(userInput)))) { // Selecting new number after completed operation
             display.textContent = solution = "";
             display.textContent += digit;
         }  else { // Setting up operation
@@ -111,9 +111,9 @@ function saveNumber (number, operator) {
     number1 = parseFloat(number);
     operation = operator;
     userInput = "";
-    
+
     // Reset "solution"
-    if (solution) {
+    if (Number.isFinite(solution)) {
         solution = "";
     }
 }

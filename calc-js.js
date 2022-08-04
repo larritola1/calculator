@@ -45,7 +45,7 @@ inputs.forEach((button) => {
         // Extract text associated with button
         let digit = button.textContent;
         // Place digit in userInput if number
-        if (digit >= 0) {
+        if (digit >= 0 || digit < 0) {
             userInput += digit;
         }
         // Handle operator selections

@@ -59,6 +59,8 @@ inputs.forEach((button) => {
              if (!Number.isNaN(number1) && operation && (!Number.isNaN(userInput) && userInput !== "")) {
                 number2 = parseFloat(userInput);
                 solution = operate(number1, number2, operation);
+                // Round answer to two decimal places
+                solution = Math.round(solution*100) / 100
                 // Switch operator to currently selected
                 operation = digit;
                 // Setup for next inputted number

@@ -12,7 +12,11 @@ function multiply(operand1, operand2) {
 }
 
 function divide(operand1, operand2) {
-    return operand1 / operand2;
+    if (operand2 == 0) {
+        return "CAN'T DIVIDE BY 0";
+    } else {
+        return operand1 / operand2;
+    }
 }
 
 // Select operation to run

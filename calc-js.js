@@ -79,15 +79,14 @@ inputs.forEach((button) => {
 
             if (operation === "=") { // Display answer only, no follow up operation
                 operation = "";
-                userInput = solution;
                 display.textContent = solution;
             } else { // Display next operation using current answer
                 number1 = solution;
                 display.textContent = solution + operation;
             }
-         } else if (solution && !operation) { // Selecting new number after completed operation
-            display.textContent = solution = number1 = "";
-            display.textContent = digit;
+        } else if (solution && userInput) {
+            display.textContent = solution = "";
+            display.textContent += digit;
         }  else { // Setting up operation
             display.textContent += digit;
         }

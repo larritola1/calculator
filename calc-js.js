@@ -72,7 +72,7 @@ inputs.forEach((button) => {
         const display = document.querySelector("#screen");
 
          // Setup display configuration
-         if (number1 && number2 && operation) { // Operation completely setup and evaluated
+         if (Number.isInteger(number1) && Number.isInteger(number2) && operation) { // Operation completely setup and evaluated
             // Blank out numbers for future operations
             number1 = ""; 
             number2 = "";

@@ -55,10 +55,8 @@ inputs.forEach((button) => {
              if (number1 && operation) {
                 number2 = parseInt(userInput);
                 solution = operate(number1, number2, operation);
-                // Switch operator if another operation is being setup
-                if (operation !== "=") {    
-                    operation = digit;
-                }
+                // Switch operator to currently selected
+                operation = digit;
                 // Setup for next inputted number
                 userInput = "";
             }    

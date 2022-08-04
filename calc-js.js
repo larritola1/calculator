@@ -61,8 +61,12 @@ inputs.forEach((button) => {
                 userInput = "";
             }    
             // Run saveNumber() if number exists
-            if (userInput && digit !== "=") {
-                saveNumber(userInput, digit);
+            if ((userInput && digit !== "=") || (Number.isInteger(solution) && digit !== "=" && Number.isNaN(parseInt(number1)))) {
+                if (userInput) {
+                    saveNumber(userInput, digit);
+                } else {
+                    saveNumber(solution, digit);
+                }
             } else {
                 digit = "";
             }

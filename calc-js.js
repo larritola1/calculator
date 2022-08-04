@@ -52,7 +52,7 @@ inputs.forEach((button) => {
         if ((digit == "+" || digit == "-" || digit == "*" 
             || digit == "/" || digit == "=")) {
              // Run operate() if operation is set up
-             if (number1 && operation) {
+             if (!Number.isNaN(number1) && operation && (!Number.isNaN(userInput) && userInput !== "")) {
                 number2 = parseInt(userInput);
                 solution = operate(number1, number2, operation);
                 // Switch operator to currently selected

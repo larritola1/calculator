@@ -77,6 +77,12 @@ inputs.forEach((button) => {
                     operation = number1 = "";
                     display.textContent = userInput;
                 }
+                // Remove last digit when only solution displayed
+                if (solution !== "" && solution == display.textContent) {
+                    removeLastInput = String(solution).slice(0, -1);
+                    solution = "";
+                    display.textContent = userInput = removeLastInput;
+                }
             }
             digit = "";
         }

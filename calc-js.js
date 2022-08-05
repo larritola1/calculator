@@ -42,7 +42,7 @@ let solution = "";
 
 // Populate display with clicked digits
 // Collect all input buttons
-const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button, #clearButton");
+const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button, #clearButton, #backButton");
 // Detect mouse click per button
 inputs.forEach((button) => {
     button.addEventListener("click", () => {
@@ -54,6 +54,10 @@ inputs.forEach((button) => {
         if (digit === "Clear") {
             display.textContent = digit = userInput = number1 = number2 
             = operation = solution = "";
+        }
+        // Delete last entry on screen
+        if (digit === "Backspace") {
+            digit = "";
         }
         // Allow decimal entry
         if (digit == ".") {

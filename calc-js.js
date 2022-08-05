@@ -59,7 +59,8 @@ inputs.forEach((button) => {
         if (digit === "Backspace") {
              // Run only when display occupied
             if (display.textContent !== "") {
-
+                const lastInput = display.textContent[display.textContent.length-1];
+                let removeLastInput;
             }
             digit = "";
         }

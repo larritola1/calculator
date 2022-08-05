@@ -106,7 +106,7 @@ inputs.forEach((button) => {
                 saveNumber(solution, operation)
                 display.textContent = number1 + operation;
             }
-        } else if (Number.isFinite(solution) && !Number.isNaN(parseFloat(userInput))) { // Selecting new number after completed operation
+        } else if (Number.isFinite(solution) && !Number.isNaN(parseFloat(userInput)) && userInput[0] !== ".") { // Selecting new number after completed operation
             display.textContent = solution = "";
             display.textContent += digit;
         }  else { // Setting up operation

@@ -60,15 +60,15 @@ inputs.forEach((button) => {
              // Run only when display occupied
             if (display.textContent !== "") {
                 const lastInput = display.textContent[display.textContent.length-1];
-                let removeLastInput;
+                let removedLastInput;
                  // Last entry was a digit
                  if (lastInput === userInput[userInput.length-1]) {
-                    removeLastInput = userInput.slice(0, -1);
-                    userInput = removeLastInput;
+                    removedLastInput = userInput.slice(0, -1);
+                    userInput = removedLastInput;
                     if (number1 !== "" && operation !== "") { // Removing digit from second number
                         display.textContent = `${number1}${operation}${userInput}`;
                     } else {
-                        display.textContent = removeLastInput;
+                        display.textContent = removedLastInput;
                     }
                 }
                 // Last entry was operator
@@ -79,9 +79,9 @@ inputs.forEach((button) => {
                 }
                 // Remove last digit when only solution displayed
                 if (solution !== "" && solution == display.textContent) {
-                    removeLastInput = String(solution).slice(0, -1);
+                    removedLastInput = String(solution).slice(0, -1);
                     solution = "";
-                    display.textContent = userInput = removeLastInput;
+                    display.textContent = userInput = removedLastInput;
                 }
             }
             digit = "";

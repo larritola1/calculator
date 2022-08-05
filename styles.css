@@ -49,15 +49,34 @@ body {
     word-break: break-all;
 }
 
-#clear {
+#calcOptions {
     flex: 1;
     display: flex;
     justify-content: center;
     width: 100%;
     border: 2px solid green;
+    gap: 1rem;
+}
+
+#clear {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #clearButton {
+    width: 100%;
+}
+
+#backspace {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#backButton {
     width: 100%;
 }
 

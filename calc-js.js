@@ -61,6 +61,16 @@ inputs.forEach((button) => {
             if (display.textContent !== "") {
                 const lastInput = display.textContent[display.textContent.length-1];
                 let removeLastInput;
+                 // Last entry was a digit
+                 if (lastInput === userInput[userInput.length-1]) {
+                    removeLastInput = userInput.slice(0, -1);
+                    userInput = removeLastInput;
+                    if (number1 !== "" && operation !== "") { // Removing digit from second number
+                        display.textContent = `${number1}${operation}${userInput}`;
+                    } else {
+                        display.textContent = removeLastInput;
+                    }
+                }
             }
             digit = "";
         }

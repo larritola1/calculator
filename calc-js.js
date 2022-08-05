@@ -55,6 +55,15 @@ inputs.forEach((button) => {
             display.textContent = digit = userInput = number1 = number2 
             = operation = solution = "";
         }
+        // Allow decimal entry
+        if (digit == ".") {
+            if ((userInput !== "" && userInput.indexOf(".") == -1) // Case 1: No solution prior to first number assignment or any number 2 assignment
+                || (Number.isInteger(solution) && userInput == "")) { // Case 2: Solution exists
+                userInput += digit;
+            } else {
+                digit = "";
+            }
+        }
         // Place digit in userInput if number
         if (digit >= 0 || digit < 0) {
             userInput += digit;
@@ -97,7 +106,7 @@ inputs.forEach((button) => {
                 saveNumber(solution, operation)
                 display.textContent = number1 + operation;
             }
-        } else if (Number.isFinite(solution) && !(Number.isNaN(parseFloat(userInput)))) { // Selecting new number after completed operation
+        } else if (Number.isFinite(solution) && !Number.isNaN(parseFloat(userInput))) { // Selecting new number after completed operation
             display.textContent = solution = "";
             display.textContent += digit;
         }  else { // Setting up operation

@@ -84,7 +84,7 @@ inputs.forEach((button) => {
             }    
             // Run saveNumber() if first number exists
             if ((userInput && digit !== "=") || (Number.isFinite(solution) && digit !== "=" && Number.isNaN(parseInt(number1)))) {
-                if (userInput) {
+                if (userInput && !Number.isFinite(solution)) {
                     saveNumber(userInput, digit);
                 } else {
                     saveNumber(solution + userInput, digit);

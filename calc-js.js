@@ -49,6 +49,22 @@ inputs.forEach((button) => {
         runCalc(button);
     });
 });
+// Detect keyboard input
+window.addEventListener("keydown", (key) => {
+    inputs.forEach((button) => {
+        const calcButton = button.textContent;
+        let inputKey = key.key;
+
+        if (inputKey === "Enter") {
+            inputKey = "=";
+            key.preventDefault();
+        }
+
+        if (calcButton === inputKey) {
+            runCalc(button);
+        }
+    });
+});
 
 // Run runCalc() whenever input sensed
 function runCalc(input) {

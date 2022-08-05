@@ -57,6 +57,10 @@ inputs.forEach((button) => {
         }
         // Delete last entry on screen
         if (digit === "Backspace") {
+             // Run only when display occupied
+            if (display.textContent !== "") {
+
+            }
             digit = "";
         }
         // Allow decimal entry

@@ -71,6 +71,12 @@ inputs.forEach((button) => {
                         display.textContent = removeLastInput;
                     }
                 }
+                // Last entry was operator
+                if (lastInput === operation) {
+                    userInput = String(number1);
+                    operation = number1 = "";
+                    display.textContent = userInput;
+                }
             }
             digit = "";
         }

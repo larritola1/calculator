@@ -76,7 +76,9 @@ inputs.forEach((button) => {
                 number2 = parseFloat(userInput);
                 solution = operate(number1, number2, operation);
                 // Round answer to two decimal places
-                solution = Math.round(solution*100) / 100
+                if (typeof solution === "number") {
+                    solution = Math.round(solution*100) / 100
+                }
                 // Switch operator to currently selected
                 operation = digit;
                 // Setup for next inputted number

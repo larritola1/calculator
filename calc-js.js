@@ -152,8 +152,7 @@ function runCalc(input) {
     }
 
     // Display configuration
-    if (Number.isFinite(number1) && Number.isFinite(number2) 
-        && operation) {
+    if (number1 !== "" && number2 !== "" && operation) {
         number1 = ""; 
         number2 = "";
 
@@ -166,7 +165,7 @@ function runCalc(input) {
         }
 
     // Starting fresh after completed operation
-    } else if (solution !== "" && !Number.isNaN(parseFloat(userInput))
+    } else if (solution !== "" && userInput !== ""
                && userInput[0] !== ".") {
         display.textContent = solution = "";
         display.textContent += digit;

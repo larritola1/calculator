@@ -109,12 +109,12 @@ function runCalc(input) {
     }
     // Allow decimal entry
     if (digit == ".") {
-        if ((userInput !== "" && userInput.indexOf(".") == -1) // Case 1: No solution prior to first number assignment or any number 2 assignment
-            || (Number.isInteger(solution) && userInput == "")) { // Case 2: Solution exists
+        // Case 1: Default
+        if ((userInput !== "" && userInput.indexOf(".") == -1)
+            // Case 2: Solution exists  
+            || (Number.isInteger(solution) && userInput == "")) {
             userInput += digit;
-        } else {
-            digit = "";
-        }
+        } else digit = "";
     }
     // Place digit in userInput if number
     if (digit >= 0 || digit < 0) {

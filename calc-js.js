@@ -142,7 +142,7 @@ function runCalc(input) {
         // Save first number and operator
         if ((userInput && digit !== "=") || 
             (Number.isFinite(solution) && digit !== "=" 
-             && number1 == "")) {
+             && number1 === "")) {
 
             if (userInput && solution == "") {
                 saveNumber(userInput, digit);
@@ -156,7 +156,7 @@ function runCalc(input) {
         number1 = ""; 
         number2 = "";
 
-        if (operation === "=") { // No follow up operation
+        if (operation === "=" || typeof solution !== "number") { // No follow up operation or divide-by-zero error
             operation = "";
             display.textContent = solution;
         } else {

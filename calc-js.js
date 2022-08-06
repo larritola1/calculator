@@ -122,12 +122,13 @@ function runCalc(input) {
     if ((digit == "+" || digit == "-" || digit == "*" 
         || digit == "/" || digit == "=")) {
          // Run operate() if operation is set up
-         if (!Number.isNaN(number1) && operation && (!Number.isNaN(userInput) && userInput !== "")) {
+         if (!Number.isNaN(number1) && operation 
+             && (!Number.isNaN(userInput) && userInput !== "")) {
             number2 = parseFloat(userInput);
             solution = operate(number1, number2, operation);
             // Round answer to two decimal places
             if (typeof solution === "number") {
-                solution = Math.round(solution*100) / 100
+                solution = Math.round(solution * 100) / 100
             }
             // Switch operator to currently selected
             operation = digit;
@@ -135,15 +136,13 @@ function runCalc(input) {
             userInput = "";
         }    
         // Run saveNumber() if first number exists
-        if ((userInput && digit !== "=") || (Number.isFinite(solution) && digit !== "=" && Number.isNaN(parseInt(number1)))) {
+        if ((userInput && digit !== "=") || 
+            (Number.isFinite(solution) && digit !== "=" 
+             && Number.isNaN(parseInt(number1)))) {
             if (userInput && !Number.isFinite(solution)) {
                 saveNumber(userInput, digit);
-            } else {
-                saveNumber(solution + userInput, digit);
-            }
-        } else {
-            digit = "";
-        }
+            } else saveNumber(solution + userInput, digit);
+        } else digit = "";
     }
      // Setup display configuration
     if (Number.isFinite(number1) && Number.isFinite(number2) && operation) { // Operation completely setup and evaluated

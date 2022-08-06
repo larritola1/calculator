@@ -117,9 +117,7 @@ function runCalc(input) {
         } else digit = "";
     }
     // Place digit in userInput if number
-    if (digit >= 0 || digit < 0) {
-        userInput += digit;
-    }
+    if (digit >= 0 || digit < 0) userInput += digit;
     // Handle operator selections
     if ((digit == "+" || digit == "-" || digit == "*" 
         || digit == "/" || digit == "=")) {

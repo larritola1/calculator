@@ -111,7 +111,7 @@ function runCalc(input) {
         // Case 1: Default for number inputs
         if ((userInput !== "" && userInput.indexOf(".") == -1)
             // Case 2: Only solution displayed
-            || (Number.isInteger(solution) && userInput == "")) {
+            || (Number.isInteger(solution) && userInput === "")) {
             userInput += digit;
         } else digit = "";
     }

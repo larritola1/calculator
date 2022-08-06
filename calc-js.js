@@ -79,17 +79,18 @@ function runCalc(input) {
     if (digit === "Backspace") {
          // Run only when display occupied
         if (display.textContent !== "") {
-            const lastInput = display.textContent[display.textContent.length-1];
+            const lastInput = 
+                display.textContent[display.textContent.length-1];
             let removedLastInput;
              // Last entry was a digit
              if (lastInput === userInput[userInput.length-1]) {
                 removedLastInput = userInput.slice(0, -1);
                 userInput = removedLastInput;
-                if (number1 !== "" && operation !== "") { // Removing digit from second number
-                    display.textContent = `${number1}${operation}${userInput}`;
-                } else {
-                    display.textContent = removedLastInput;
-                }
+                // Removing digit from second number
+                if (number1 !== "" && operation !== "") {
+                    display.textContent = 
+                        `${number1}${operation}${userInput}`;
+                } else display.textContent = removedLastInput;
             }
             // Last entry was operator
             if (lastInput === operation) {

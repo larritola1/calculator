@@ -76,11 +76,11 @@ function runCalc(input) {
     if (digit === "Backspace") {
         if (display.textContent !== "") {
             const lastInput = 
-                display.textContent[display.textContent.length-1];
+                display.textContent.slice(-1);
             let removedLastInput;
 
             // Last entry was a digit
-            if (lastInput === userInput[userInput.length-1]) {
+            if (lastInput === userInput.slice(-1)) {
                 removedLastInput = userInput.slice(0, -1);
                 userInput = removedLastInput;
                 // Removing digit from second number

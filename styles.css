@@ -10,7 +10,6 @@ body {
     align-items: center;
     margin: 0;
     background: linear-gradient(90deg, rgba(122,69,197,1) 0%, rgb(122 69 197 / 89%) 46%, rgba(122,69,197,1) 100%);
-    /*background-color: #7a45c5e3;*/
 }
 
 #calcContainer {
@@ -30,7 +29,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid orange;
     gap: 1rem;
 
 }
@@ -41,7 +39,7 @@ body {
     justify-content: center;
     width: 100%;
     height: auto;
-    border: 2px solid black;
+    background-color: white;
     flex: 2;
 }
 
@@ -56,7 +54,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    border: 2px solid green;
     gap: 1rem;
     flex: 1;
 }
@@ -94,21 +91,20 @@ body {
 #keypad {
     flex: 1;
     display: flex;
-    border: 2px solid red;
 }
 
 #numberPad {
     display: flex;
     flex-direction: column;
     flex: 5;
-    gap: 0.25rem;
+    gap: 0.30rem;
 }
 
 #operators {
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: 0.25rem;
+    gap: 0.30rem;
 }
 
 #operators button {
@@ -122,5 +118,9 @@ body {
 
 .numberRow button {
     flex: 1;
-    margin-right: 0.25rem;
+    margin-right: 0.30rem;
+}
+
+button {
+    border-width: 0;
 }

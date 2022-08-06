@@ -182,6 +182,6 @@ function saveNumber(number, operator) {
     userInput = "";
 
     // When current answer becomes first operand
-    if (Number.isFinite(solution)) solution = "";
+    if (solution !== "") solution = "";
 }
 

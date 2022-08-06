@@ -177,8 +177,6 @@ function saveNumber(number, operator) {
     userInput = "";
 
     // Reset "solution"
-    if (Number.isFinite(solution)) {
-        solution = "";
-    }
+    if (Number.isFinite(solution)) solution = "";
 }
 

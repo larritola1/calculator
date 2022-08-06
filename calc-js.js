@@ -1,4 +1,3 @@
-// Add operations for calculator
 function add(operand1, operand2) {
     return operand1 + operand2;
 }
@@ -19,7 +18,6 @@ function divide(operand1, operand2) {
     }
 }
 
-// Select operation to run
 function operate(operand1, operand2, operator) {
     switch (operator) {
         case "+":
@@ -33,23 +31,21 @@ function operate(operand1, operand2, operator) {
     }
 }
 
-// Create variables to collect user input
+
+
 let userInput = "";
 let number1 = "";
 let number2 = "";
 let operation = "";
 let solution = "";
-
-// Populate display with clicked digits
-// Collect all input buttons
 const inputs = document.querySelectorAll(`#numberPad .numberRow button, 
                                           #operators button, #clearButton,
                                           #backButton`);
-// Detect mouse click per button
+
 inputs.forEach((button) => {
     button.addEventListener("click", () => runCalc(button));
 });
-// Detect keyboard input
+
 window.addEventListener("keydown", (key) => {
     inputs.forEach((button) => {
         const calcButton = button.textContent;
@@ -57,6 +53,8 @@ window.addEventListener("keydown", (key) => {
 
         if (inputKey === "Enter") {
             inputKey = "=";
+
+            // Prevent repeated entries of button selected after click
             key.preventDefault();
         }
 
@@ -64,26 +62,25 @@ window.addEventListener("keydown", (key) => {
     });
 });
 
-// Run runCalc() whenever input sensed
+
+
 function runCalc(input) {
-    // Extract text associated with button
     let digit = input.textContent;
-    // Collect "screen" div
     const display = document.querySelector("#screen");
-    // Clear screen and all variables if "clear" is clicked
+
     if (digit === "Clear") {
         display.textContent = digit = userInput = number1 = number2 
         = operation = solution = "";
     }
-    // Delete last entry on screen
+
     if (digit === "Backspace") {
-         // Run only when display occupied
         if (display.textContent !== "") {
             const lastInput = 
                 display.textContent[display.textContent.length-1];
             let removedLastInput;
-             // Last entry was a digit
-             if (lastInput === userInput[userInput.length-1]) {
+
+            // Last entry was a digit
+            if (lastInput === userInput[userInput.length-1]) {
                 removedLastInput = userInput.slice(0, -1);
                 userInput = removedLastInput;
                 // Removing digit from second number
@@ -92,12 +89,13 @@ function runCalc(input) {
                         `${number1}${operation}${userInput}`;
                 } else display.textContent = removedLastInput;
             }
-            // Last entry was operator
+            
             if (lastInput === operation) {
                 userInput = String(number1);
                 operation = number1 = "";
                 display.textContent = userInput;
             }
+
             // Remove last digit when only solution displayed
             if (solution !== "" && solution == display.textContent) {
                 removedLastInput = String(solution).slice(0, -1);
@@ -105,78 +103,86 @@ function runCalc(input) {
                 display.textContent = userInput = removedLastInput;
             }
         }
+
         digit = "";
     }
-    // Allow decimal entry
+
     if (digit == ".") {
-        // Case 1: Default
+        // Case 1: Default for number inputs
         if ((userInput !== "" && userInput.indexOf(".") == -1)
-            // Case 2: Solution exists  
+            // Case 2: Only solution displayed
             || (Number.isInteger(solution) && userInput == "")) {
             userInput += digit;
         } else digit = "";
     }
-    // Place digit in userInput if number
+
     if (digit >= 0 || digit < 0) userInput += digit;
-    // Handle operator selections
+
     if ((digit == "+" || digit == "-" || digit == "*" 
         || digit == "/" || digit == "=")) {
-         // Run operate() if operation is set up
+         // Evaluate if operation is set up
          if (!Number.isNaN(number1) && operation 
              && (!Number.isNaN(userInput) && userInput !== "")) {
             number2 = parseFloat(userInput);
+
             solution = operate(number1, number2, operation);
+            
             // Round answer to two decimal places
             if (typeof solution === "number") {
                 solution = Math.round(solution * 100) / 100
             }
-            // Switch operator to currently selected
+
+            // Switch operator to currently selected one
             operation = digit;
-            // Setup for next inputted number
+
+            // Set up for next inputted number
             userInput = "";
-        }    
-        // Run saveNumber() if first number exists
+        }  
+
+        // Save first number and operator
         if ((userInput && digit !== "=") || 
             (Number.isFinite(solution) && digit !== "=" 
              && Number.isNaN(parseInt(number1)))) {
+
             if (userInput && !Number.isFinite(solution)) {
                 saveNumber(userInput, digit);
             } else saveNumber(solution + userInput, digit);
+
         } else digit = "";
     }
-     // Setup display configuration
-     // Operation completely setup and evaluated
+
+    // Display configuration
     if (Number.isFinite(number1) && Number.isFinite(number2) 
         && operation) {
-        // Blank out numbers for future operations
         number1 = ""; 
         number2 = "";
-        // Display answer only, no follow up operation
-        if (operation === "=") {
+
+        if (operation === "=") { // No follow up operation
             operation = "";
             display.textContent = solution;
-        // Display next operation using current answer
         } else {
             saveNumber(solution, operation)
             display.textContent = number1 + operation;
         }
-    // Selecting new number after completed operation
+
+    // Starting fresh after completed operation
     } else if (solution !== "" && !Number.isNaN(parseFloat(userInput))
                && userInput[0] !== ".") {
         display.textContent = solution = "";
         display.textContent += digit;
-    // Setting up operation
+
+    // Setting up current operation
     } else display.textContent += digit;
 }
 
 
-// Save first number and operator
+
 function saveNumber(number, operator) {
     number1 = parseFloat(number);
     operation = operator;
     userInput = "";
 
-    // Reset "solution"
+    // When current answer becomes first operand
     if (Number.isFinite(solution)) solution = "";
 }
 

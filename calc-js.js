@@ -42,7 +42,9 @@ let solution = "";
 
 // Populate display with clicked digits
 // Collect all input buttons
-const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button, #clearButton, #backButton");
+const inputs = document.querySelectorAll(`#numberPad .numberRow button, 
+                                          #operators button, #clearButton,
+                                          #backButton`);
 // Detect mouse click per button
 inputs.forEach((button) => {
     button.addEventListener("click", () => runCalc(button));

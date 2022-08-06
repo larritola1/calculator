@@ -23,15 +23,19 @@ body {
 #titleSection {
     display: flex;
     flex: 1;
+    margin-bottom: -5rem;
 }
 
 #calcSection {
     display: flex;
-    flex: 3;
+    flex: 1;
+}
+
+#footerSection {
+    flex: 1;
 }
 
 #title {
-    font-family: 'Courier New', Courier, monospace;
     color: white;
     align-self: center;
     font-size: 4em;
@@ -155,6 +159,11 @@ button {
     font-size: large;
 }
 
-button, #screen {
+footer {
+    color: white;
+    margin-top: 2rem;
+}
+
+#title, button, #screen, footer {
     font-family: 'Courier New', Courier, monospace;
 }

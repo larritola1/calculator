@@ -45,9 +45,7 @@ let solution = "";
 const inputs = document.querySelectorAll("#numberPad .numberRow button, #operators button, #clearButton, #backButton");
 // Detect mouse click per button
 inputs.forEach((button) => {
-    button.addEventListener("click", () => {
-        runCalc(button);
-    });
+    button.addEventListener("click", () => runCalc(button));
 });
 // Detect keyboard input
 window.addEventListener("keydown", (key) => {
@@ -60,9 +58,7 @@ window.addEventListener("keydown", (key) => {
             key.preventDefault();
         }
 
-        if (calcButton === inputKey) {
-            runCalc(button);
-        }
+        if (calcButton === inputKey) runCalc(button);
     });
 });
 

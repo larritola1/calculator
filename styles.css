@@ -12,6 +12,32 @@ body {
     background: linear-gradient(90deg, rgba(122,69,197,1) 0%, rgb(122 69 197 / 89%) 46%, rgba(122,69,197,1) 100%);
 }
 
+#pageUI {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleSection {
+    display: flex;
+    flex: 1;
+}
+
+#calcSection {
+    display: flex;
+    flex: 3;
+}
+
+#title {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    align-self: center;
+    font-size: 4em;
+    font-weight: normal;
+}
+
 #calcContainer {
     display: flex;
     width: 400px;

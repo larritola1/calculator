@@ -145,25 +145,28 @@ function runCalc(input) {
         } else digit = "";
     }
      // Setup display configuration
-    if (Number.isFinite(number1) && Number.isFinite(number2) && operation) { // Operation completely setup and evaluated
-    // Blank out numbers for future operations
+     // Operation completely setup and evaluated
+    if (Number.isFinite(number1) && Number.isFinite(number2) 
+        && operation) {
+        // Blank out numbers for future operations
         number1 = ""; 
         number2 = "";
-
-        if (operation === "=") { // Display answer only, no follow up operation
+        // Display answer only, no follow up operation
+        if (operation === "=") {
             operation = "";
             display.textContent = solution;
-        } else { // Display next operation using current answer
+        // Display next operation using current answer
+        } else {
             saveNumber(solution, operation)
             display.textContent = number1 + operation;
         }
-    } else if (solution !== "" && !Number.isNaN(parseFloat(userInput)) && userInput[0] !== ".") { // Selecting new number after completed operation
+    // Selecting new number after completed operation
+    } else if (solution !== "" && !Number.isNaN(parseFloat(userInput))
+               && userInput[0] !== ".") {
         display.textContent = solution = "";
         display.textContent += digit;
-    }  else { // Setting up operation
-        display.textContent += digit;
-    }
-
+    // Setting up operation
+    } else display.textContent += digit;
 }
 
 

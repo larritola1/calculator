@@ -9,6 +9,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    background: linear-gradient(90deg, rgba(122,69,197,1) 0%, rgb(122 69 197 / 89%) 46%, rgba(122,69,197,1) 100%);
+    /*background-color: #7a45c5e3;*/
 }
 
 #calcContainer {
@@ -16,7 +18,7 @@ body {
     width: 400px;
     height: 600px;
     margin: 0 1rem;
-    background-color: grey;
+    background-color: #b178ff;
     padding: 1rem;
 }
 

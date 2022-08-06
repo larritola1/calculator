@@ -144,7 +144,7 @@ function runCalc(input) {
             (Number.isFinite(solution) && digit !== "=" 
              && number1 === "")) {
 
-            if (userInput && solution == "") {
+            if (userInput && solution === "") {
                 saveNumber(userInput, digit);
             } else saveNumber(solution + userInput, digit);
 

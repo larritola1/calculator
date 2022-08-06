@@ -121,8 +121,8 @@ function runCalc(input) {
     if ((digit == "+" || digit == "-" || digit == "*" 
         || digit == "/" || digit == "=")) {
          // Evaluate if operation is set up
-         if (!Number.isNaN(number1) && operation 
-             && (!Number.isNaN(userInput) && userInput !== "")) {
+         if ((number1 !== "") && operation 
+             && (userInput !== "")) {
             number2 = parseFloat(userInput);
 
             solution = operate(number1, number2, operation);
@@ -142,9 +142,9 @@ function runCalc(input) {
         // Save first number and operator
         if ((userInput && digit !== "=") || 
             (Number.isFinite(solution) && digit !== "=" 
-             && Number.isNaN(parseInt(number1)))) {
+             && number1 == "")) {
 
-            if (userInput && !Number.isFinite(solution)) {
+            if (userInput && solution == "") {
                 saveNumber(userInput, digit);
             } else saveNumber(solution + userInput, digit);
 

@@ -176,3 +176,7 @@ a:hover {
 #title, button, #screen, footer {
     font-family: 'Courier New', Courier, monospace;
 }
+
+button:hover {
+    background-color: rgb(202, 202, 202);
+}

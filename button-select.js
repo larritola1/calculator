@@ -6,6 +6,10 @@ inputs.forEach((button) => {
             button.classList.add("active");
         }
     });
+
+    button.addEventListener("mouseover", () => {
+        deselectButton();
+    });
 });
 
 window.addEventListener("keydown", (key) => {    

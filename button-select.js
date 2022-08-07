@@ -8,6 +8,22 @@ inputs.forEach((button) => {
     });
 });
 
+window.addEventListener("keydown", (key) => {    
+    inputs.forEach((button) => {
+        const calcButton = button.textContent;
+        let inputKey = key.key;
+
+        if (inputKey === "Enter") {
+            inputKey = "=";
+        }
+
+        if (calcButton === inputKey) {
+            deselectButton();
+            button.classList.add("active");
+        }
+    });
+});
+
 function deselectButton() {
     inputs.forEach((button) => {
         if (button.className == "active") {

@@ -116,7 +116,19 @@ function runCalc(input) {
         } else digit = "";
     }
 
-    if (digit >= 0 || digit < 0) userInput += digit;
+    // Strict sole "0" initial digit for values greater than or equal to 1
+    if (digit == "0") {
+        if (userInput !== "0" || userInput === "") {
+            userInput += digit;
+        } else digit = "";
+    }
+
+    if (digit > 0 || digit < 0) {
+        if (userInput === "0" || userInput === ".") {
+            digit = "";
+        }
+        else userInput += digit;
+    }
 
     if ((digit == "+" || digit == "-" || digit == "*" 
         || digit == "/" || digit == "=")) {
